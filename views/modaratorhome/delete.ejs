@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete</title>
+</head>
+<body>
+	<h1> Delete </h1>  
+	<a href="/modaratorhome">Back</a> |
+	<a href="/logout">logout</a>
+
+	<table width="300px" >
+		<tr>
+			<td>ID</td>
+			<td width="2%">:</td>
+			<td><%=id%></td>
+		</tr>
+		<tr>
+			<td width="35%">Name</td>
+			<td width="2%">:</td>
+			<td><%=name%></td>
+		</tr>	
+	</table>
+	<br><br>
+	<b>Are you sure? This can't be undone of you click confirm!</b>
+
+	<form method="post">
+			<input type="hidden" name="id" value="<%=id%>"/>
+			<input type="submit" name="delete" value="Confirm"/>
+	</form>
+
+</body>
+</html>

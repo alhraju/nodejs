@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Content List</title>
+</head>
+<body>
+<table width="80%" align="center" cellspacing="0" cellpadding="10" border="1">
+    <tr>
+        <td colspan="2" valign="middle" height="70">  
+			<table width="100%">
+                <tr>
+                    <td>
+                            <img height="48" src="/resource/logo.png">
+                    </td>
+                    <td align="right">
+                        Logged in as <a href="/modaratorhome" target="iFrame"><%=name%></a>&nbsp;|
+                        <a href="/logout">Logout</a>
+                    </td>
+                </tr>
+			</table>
+        </td>
+    </tr>
+    <tr>
+	<td width="190" valign="top">
+			<b>&nbsp;Admin Panel</b><hr/>
+            <ul>
+                <li><a href="/modaratorhome" target="iFrame">Dashboard</a></li>
+                <li><a href="/modaratorhome/content" target="iFrame">Content List</a></li>
+                <li><a href="/modaratorhome/addcontent" target="iFrame">ADD Content</a></li>
+                <li><a href="/modaratorhome/request" target="iFrame">View Requested Content</a></li>
+                <li><a href="/modaratorhome/profile" target="iFrame">Profile</a></li>
+            </ul> 
+			<b>&nbsp;Personal</b><hr/>
+            <ul>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </td>
+        <td valign="top">
+
+
+		
+	<table border="1" cellpadding="5" cellspacing="0">
+		<tr><td colspan="4" align="CENTER">Teachers Info</td></tr>
+		<tr>
+			<td>ID</td><td>NAME</td><td>File</td><td>Type</td><td>Action</td>
+		</tr>
+		<% for(var i=0; i < uList.length; i++){ %>
+		<tr>
+			<td><%= uList[i].id %></td>
+			<td><%= uList[i].name %></td>
+            <td><%= uList[i].file %></td>
+			<td><%= uList[i].type %></td>
+			<td>
+				<a href="/modaratorhome/delete/<%=uList[i].id%>"> DELETE</a>
+			</td>
+		</tr>
+		<% } %>
+	</table>
+	
+	</td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            Copyright &copy; 2019 (AIUB-ATP3)
+        </td>
+    </tr>
+</table>
+</body>
+</html>
